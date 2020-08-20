@@ -1,8 +1,9 @@
 import React from 'react';
 import Messages from "./Messages";
 import {MessageType} from "../interface/MessageType";
+import IMessengerProps from "../interface/IMessengerProps";
 
-class Messenger extends React.Component {
+class Messenger extends React.Component<IMessengerProps> {
 
     render() {
         return (<div>
@@ -10,8 +11,19 @@ class Messenger extends React.Component {
 
             <div className="screen">
                 <div className="text-bar">
-                    <form className="text-bar__field" id="form-message">
-                        <text>asdasdas</text>
+                    <form className="text-bar__field">
+                        <div className={"header header-img"}>
+                            <img src={this.props.displayImage} alt={"DP"}/>
+                            <div className={"active"}/>
+                        </div>
+                        <div className={"header"}>
+                            <div>
+                                <text>Maifee Ul Asad</text>
+                            </div>
+                            <div>
+                                <text>Active now</text>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div className="conversation">
@@ -22,8 +34,8 @@ class Messenger extends React.Component {
                     <Messages messages={['ayyyyy','ula la','chumma,chumma de de']} messageType={MessageType.Sent}/>
                 </div>
                 <div className="text-bar">
-                    <form className="text-bar__field" id="form-message">
-                        <input type="text" placeholder="Type or thumb up ;)"/>
+                    <form className="text-bar__field">
+                        <input type="text" placeholder="Type a message"/>
                     </form>
                     <div className="text-bar__thumb">
                         <div className="thumb"/>
