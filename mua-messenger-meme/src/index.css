@@ -110,6 +110,7 @@ img{
 .text-bar {
     height: 50px;
     border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 .text-bar__field {
     float: left;
@@ -235,9 +236,26 @@ img{
     display: inline-block;
 }
 
+.header-details{
+    display: inline-block;
+    transform: translate(10px, 0px);
+}
+
 .header-img{
     display: inline-block;
     transform: translate(15px, 5px);
+}
+
+.side{
+    display: inline-block;
+}
+
+.side-left{
+    float: left;
+}
+
+.side-right{
+    float: right;
 }
 
 .thumb-img, .thumb {

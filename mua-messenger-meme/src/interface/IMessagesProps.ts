@@ -1,8 +1,8 @@
-import {MessageType} from "./MessageType";
+import {IMessageType} from "./IMessageType";
 
 export default interface IMessagesProps {
     messages : Array<String>,
     time?:String,
-    messageType : MessageType,
+    messageType : IMessageType,
     isRemoved? :Boolean,
 }

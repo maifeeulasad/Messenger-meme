@@ -1,20 +1,16 @@
 import React from 'react';
 import IMessagesProps from "../interface/IMessagesProps";
-import {MessageType} from "../interface/MessageType";
+import {IMessageType} from "../interface/IMessageType";
 
 class Messages extends React.Component<IMessagesProps> {
-
-    styleMessage=(message:String):String=>{
-        return message;
-    };
 
     render() {
         return (
 
-            <div className={this.props.messageType ===MessageType.Received ? "messages messages--received" : "messages messages--sent"}>
+            <div className={this.props.messageType ===IMessageType.Received ? "messages messages--received" : "messages messages--sent"}>
                 {
                     this.props.messages.map((message) =>{
-                        return(<div className="message">{this.styleMessage(message)}</div>)
+                        return(<div className="message">{message}</div>)
                     })
                 }
             </div>);

@@ -1,6 +1,5 @@
 import React from 'react';
 import Messages from "./Messages";
-import {MessageType} from "../interface/MessageType";
 import IMessengerProps from "../interface/IMessengerProps";
 
 class Messenger extends React.Component<IMessengerProps> {
@@ -16,22 +15,23 @@ class Messenger extends React.Component<IMessengerProps> {
                             <img src={this.props.displayImage} alt={"DP"}/>
                             <div className={"active"}/>
                         </div>
-                        <div className={"header"}>
+                        <div className={"header-details"}>
                             <div>
-                                <text>Maifee Ul Asad</text>
+                                {this.props.displayName}
                             </div>
                             <div>
-                                <text>Active now</text>
+                                Active now
                             </div>
                         </div>
                     </form>
                 </div>
                 <div className="conversation">
-                    <Messages messages={['1dsfsdfsdfsdfsd\nfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfsdfdsfsdfsdfsdsdfsdfdsfsdfsdfsdfsdfsdf','2','3']} messageType={MessageType.Received}/>
-                    <Messages messages={['4','5','6']} messageType={MessageType.Sent}/>
-                    <Messages messages={['7','8','9']} messageType={MessageType.Received}/>
-                    <Messages messages={['10','11','12dfgsdgsgdsgsdgsdgdsgdsgsdgsdgsdgsdgsdgsdgsdgsdgsdgsdgsd']} messageType={MessageType.Received}/>
-                    <Messages messages={['ayyyyy','ula la','chumma,chumma de de']} messageType={MessageType.Sent}/>
+                    {
+                        this.props.messages.map((message) => {
+                            return (<Messages messages={message.messages} messageType={message.messageType}
+                                              time={message.time} isRemoved={message.isRemoved}/>)
+                        })
+                    }
                 </div>
                 <div className="text-bar">
                     <form className="text-bar__field">
